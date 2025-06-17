@@ -40,13 +40,13 @@
 1.  **构建 Docker 镜像:**
     在项目根目录下执行:
     ```bash
-    docker build -t kong-plugins-configs:latest .
+    docker pull hewenyulucky/kong-configs
     ```
 
 2.  **运行 Docker 容器:**
     ```bash
     # 运行在 8080 端口，并设置一个 KONG_ 环境变量
-    docker run -p 8080:8080 -e KONG_MY_PLUGIN_SETTING="docker_value" kong-plugins-configs:latest
+    docker run -p 8080:8080 -e KONG_MY_PLUGIN_SETTING="docker_value" hewenyulucky/kong-configs:latest
 
     # 运行在 9090 端口
     docker run -p 9090:9090 -e PORT=9090 -e KONG_ANOTHER_SETTING="another_docker_value" kong-plugins-configs:latest
